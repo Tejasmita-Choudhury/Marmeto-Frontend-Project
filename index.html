@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Coding Assesment</title>
+  </head>
+
+  <body>
+    <script src="./script.js"></script>
+    <header>
+      <nav>
+        <!-- Left Section: Logo and Name -->
+        <div class="logo">
+          <img src="assert/Logo.png" alt="Logo" />
+          <span>Marmeto</span>
+        </div>
+
+        <!-- Middle Section: Navigation Links -->
+        <div class="nav-links">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Section: Icon Buttons -->
+        <div class="icon-buttons">
+          <span class="search-icon">&#128269;</span>
+          <span class="fav-icon">&#10084;</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </nav>
+    </header>
+
+    <mainContent>
+      <div class="main-container">
+        <!-- Banner Part -->
+        <div class="banner-part">
+          <div class="glass-effect">
+            <img src="assert/Logo.png" alt="Logo" class="banner-logo" />
+            <h1>Cart</h1>
+            <div class="banner-text">
+              <div class="text-header">
+                <h2>Home ></h2>
+              </div>
+              <div class="text-description">
+                <p>Cart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-list-part">
+          <div class="left-part">
+            <!-- Cart Table-like structure -->
+            <div class="cart-table">
+              <!-- Header Row -->
+              <div class="cart-table-header">
+                <div class="cart-header-item"></div>
+                <!-- Empty Space -->
+                <div class="cart-header-item">Product</div>
+                <div class="cart-header-item">Price</div>
+                <div class="cart-header-item">Quantity</div>
+                <div class="cart-header-item">Subtotal</div>
+                <div class="cart-header-item"></div>
+                <!-- Empty Space for Bin Icon -->
+              </div>
+
+              <!-- Cart Items Row -->
+              <div class="cart-item-row">
+                <div class="cart-item-image">
+                  <img src="" alt="Product" class="product-image" />
+                </div>
+                <div class="cart-item-name"></div>
+                <!-- Product Name -->
+                <div class="cart-item-price"></div>
+                <!-- Price will be inserted dynamically -->
+                <div class="cart-item-quantity">
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    max="99"
+                    class="quantity-input"
+                  />
+                </div>
+                <div class="cart-item-subtotal"></div>
+                <!-- Subtotal will be calculated -->
+                <div class="cart-item-bin">
+                  <span class="bin-icon">&#128465;</span>
+                  <!-- Bin icon for deletion -->
+                </div>
+              </div>
+
+              <!-- Add more rows here for more products -->
+            </div>
+          </div>
+          <div class="right-part">
+            <!-- Cart Totals Box -->
+            <div class="cart-totals">
+                <div class="cart-totals-header">
+                    <h3>Cart Totals</h3> <!-- Header Center aligned -->
+                </div>
+                <div class="cart-totals-content">
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <span id="subtotalAmount">Rs. 0.00</span> <!-- Dynamic Subtotal Amount -->
+                    </div>
+                    <div class="total">
+                        <span>Total</span>
+                        <span id="totalAmount">Rs. 0.00</span> <!-- Dynamic Total Amount -->
+                    </div>
+                    <button class="checkout-btn">Checkout</button> <!-- Checkout Button -->
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </mainContent>
+
+    <footer class="footer">
+      <div class="footer-item">
+        <img src="assert/High Quality.png" alt="High Quality" class="footer-icon" />
+        <div class="footer-content">
+          <h2>High Quality</h2>
+          <p>Crafted from top materials</p>
+        </div>
+      </div>
+      <div class="footer-item">
+        <img
+          src="assert/Warranty.png"
+          alt="Warranty Protection"
+          class="footer-icon"
+        />
+        <div class="footer-content">
+          <h2>Warranty Protection</h2>
+          <p>Over 2 years</p>
+        </div>
+      </div>
+      <div class="footer-item">
+        <img src="assert/Free Shipping.png" alt="Free Shipping" class="footer-icon" />
+        <div class="footer-content">
+          <h2>Free Shipping</h2>
+          <p>Order over 150 $</p>
+        </div>
+      </div>
+      <div class="footer-item">
+        <img src="assert/Support.png" alt="24/7 Support" class="footer-icon" />
+        <div class="footer-content">
+          <h2>24 / 7 Support</h2>
+          <p>Dedicated Support</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

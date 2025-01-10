@@ -1,0 +1,490 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes the full viewport height */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    /* Keeps the header always at the top */
+    top: 0;
+    z-index: 1000;
+    /* Ensures the header is above other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Section (Logo and Name) */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    /* Adjust size of the logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Middle Section (Navigation Links) */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+    /* Hover effect on links */
+}
+
+/* Right Section (Icon Buttons) */
+.icon-buttons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.icon-buttons span {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.icon-buttons span:hover {
+    color: #f39c12;
+    /* Hover effect on icons */
+}
+
+/* Main Content */
+mainContent {
+    flex: 1;
+    /* Makes the main content take the remaining space */
+    background-color: #f8f9fa;
+    /* Light gray background for the main area */
+}
+
+/* Main Content Styling */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner Part */
+.banner-part {
+    background-image: url('assert/BG\ Image.jpeg');
+    /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    /* Fixed height for the banner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-part::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent overlay */
+    backdrop-filter: blur(4px);
+    /* Apply blur glass effect */
+    z-index: 1;
+    /* Ensure this is below the text */
+}
+
+.glass-effect {
+    position: relative;
+    /* Keep content on top */
+    z-index: 2;
+    /* Higher than the overlay */
+    text-align: center;
+    color: #000;
+    /* Black text for better contrast */
+}
+
+.banner-logo {
+    width: 90px;
+    /* Logo size */
+    height: 90px;
+    object-fit: contain;
+    /* margin-bottom: 5px; */
+}
+.banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between the two parts */
+    color: #fff; /* White text */
+    text-align: center;
+}
+
+.text-header h2 {
+    font-size: 24px; /* Header font size */
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-description p {
+    font-size: 16px; /* Paragraph font size */
+    margin: 0;
+}
+.glass-effect h2 {
+    font-size: 24px;
+    /* Title size */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.glass-effect p {
+    font-size: 16px;
+    /* Description size */
+    margin: 5px 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner-part {
+        height: 250px;
+        /* Adjust banner height for smaller screens */
+    }
+
+    .glass-effect h2 {
+        font-size: 20px;
+        /* Adjust font size for smaller screens */
+    }
+
+    .glass-effect p {
+        font-size: 14px;
+    }
+    
+    .text-header h2 {
+        font-size: 20px; /* Smaller header on small screens */
+    }
+
+    .text-description p {
+        font-size: 14px; /* Smaller paragraph text on small screens */
+    }
+}
+
+
+.cart-list-part {
+    display: flex;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.left-part {
+    flex: 0 0 70%; /* Left part takes 60% of the available space */
+    padding: 10px;
+    /* background-color: #e9ecef; */
+    display: flex;
+    justify-content: center; /* Center the table horizontally */
+}
+
+.right-part {
+    flex: 0 0 30%; /* Right part takes 40% of the available space */
+    padding: 30px;
+}
+
+/* Cart Table-like Structure */
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the table takes full width of the left part */
+    max-width: 800px; /* Max width to prevent it from getting too wide */
+}
+
+.cart-table-header,
+.cart-item-row {
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+    justify-content: space-between; /* Ensure equal spacing between columns */
+}
+
+.cart-table-header {
+    background-color:rgba(250, 243, 234, 1);
+    ; /* Cream color background */
+    border-radius: 5px;
+}
+
+
+.cart-header-item,
+.cart-item-image,
+.cart-item-name,
+.cart-item-price,
+.cart-item-quantity,
+.cart-item-subtotal,
+.cart-item-bin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 16px;
+    flex: 1; /* Ensure columns take up equal width */
+}
+
+.cart-header-item {
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart-item-quantity input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+}
+
+.cart-item-bin .bin-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #f39c12;
+}
+
+.cart-item-image img {
+    width: 100px;  /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distorting */
+}
+
+
+
+
+.cart-totals {
+    background-color: #D1D1A6;
+    padding: 50px;
+    padding-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-totals-header h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+.cart-totals-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subtotal, .total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    padding: 10px 20px; /* Add padding for spacing */
+    background-color: transparent; /* Remove background color */
+    color: #071009; /* Green text color */
+    border: 2px solid #090d0a; /* Add a green border */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center;
+    border-radius: 25px; /* Rounded corners */
+    text-transform: uppercase; /* Optional: makes text uppercase */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.checkout-btn:hover {
+    background-color: #28a745; /* Green background on hover */
+    color: white; /* Change text color to white on hover */
+}
+
+.checkout-btn:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-list-part {
+        flex-direction: column;
+    }
+
+    .left-part, .right-part {
+        flex: 1 1 100%;
+    }
+    .cart-totals-header h3 {
+        font-size: 20px;
+    }
+
+    .subtotal, .total {
+        font-size: 16px;
+    }
+    .checkout-btn {
+        font-size: 14px;
+    }
+    .cart-table-header,
+    .cart-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-header-item,
+    .cart-item-image,
+    .cart-item-name,
+    .cart-item-price,
+    .cart-item-quantity,
+    .cart-item-subtotal,
+    .cart-item-bin {
+        padding: 5px 0;
+        width: 100%;
+    }
+
+    .cart-item-quantity input {
+        width: 60px;
+    }
+
+    .cart-item-bin .bin-icon {
+        font-size: 18px;
+    }
+
+    .cart-item-image img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #f5f5dc;
+    /* Cream color background */
+    color: #000000;
+    /* Black text */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    flex: 1 1 300px;
+    /* Adjust for responsiveness */
+    gap: 0;
+    /* No space between icon and text */
+}
+
+.footer-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-content {
+    margin-left: 0;
+    /* Ensures no extra space */
+}
+
+.footer-content h3 {
+    font-size: 20px;
+    /* Increased font size for heading */
+    margin: 0;
+    color: #000000;
+}
+
+.footer-content p {
+    font-size: 16px;
+    /* Increased font size for description */
+    color: #000000;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+        /* Hide navigation links on small screens */
+    }
+
+    .icon-buttons {
+        gap: 10px;
+    }
+
+    .logo span {
+        font-size: 20px;
+        /* Smaller font size for logo on small screens */
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-icon {
+        margin-bottom: 10px;
+    }
+}
